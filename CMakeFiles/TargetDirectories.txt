@@ -1,0 +1,3 @@
+/home/erik/GitRepos/CppPractice/CMakeFiles/rebuild_cache.dir
+/home/erik/GitRepos/CppPractice/CMakeFiles/edit_cache.dir
+/home/erik/GitRepos/CppPractice/CMakeFiles/myexample.dir
