@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/bmimetric.dir/bmimetric.cpp.o  -o bmimetric 

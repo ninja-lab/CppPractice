@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/grade.dir/gradeclass.cpp.o  -o grade 

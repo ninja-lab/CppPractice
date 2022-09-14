@@ -8,5 +8,5 @@ project(CppPractice
   LANGUAGES
     CXX
 )
-
-add_executable(myexample HelloWorld.cpp)
+set(CMAKE_BUILD_TYPE Debug)
+add_executable(fibonacci fibonacci.cpp)

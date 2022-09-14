@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/erik/GitRepos/CppPractice
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named myexample
+# Target rules for targets named fibonacci
 
 # Build rule for target.
-myexample: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 myexample
-.PHONY : myexample
+fibonacci: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fibonacci
+.PHONY : fibonacci
 
 # fast build rule for target.
-myexample/fast:
-	$(MAKE) -f CMakeFiles/myexample.dir/build.make CMakeFiles/myexample.dir/build
-.PHONY : myexample/fast
+fibonacci/fast:
+	$(MAKE) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/build
+.PHONY : fibonacci/fast
 
-HelloWorld.o: HelloWorld.cpp.o
+fibonacci.o: fibonacci.cpp.o
 
-.PHONY : HelloWorld.o
+.PHONY : fibonacci.o
 
 # target to build an object file
-HelloWorld.cpp.o:
-	$(MAKE) -f CMakeFiles/myexample.dir/build.make CMakeFiles/myexample.dir/HelloWorld.cpp.o
-.PHONY : HelloWorld.cpp.o
+fibonacci.cpp.o:
+	$(MAKE) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/fibonacci.cpp.o
+.PHONY : fibonacci.cpp.o
 
-HelloWorld.i: HelloWorld.cpp.i
+fibonacci.i: fibonacci.cpp.i
 
-.PHONY : HelloWorld.i
+.PHONY : fibonacci.i
 
 # target to preprocess a source file
-HelloWorld.cpp.i:
-	$(MAKE) -f CMakeFiles/myexample.dir/build.make CMakeFiles/myexample.dir/HelloWorld.cpp.i
-.PHONY : HelloWorld.cpp.i
+fibonacci.cpp.i:
+	$(MAKE) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/fibonacci.cpp.i
+.PHONY : fibonacci.cpp.i
 
-HelloWorld.s: HelloWorld.cpp.s
+fibonacci.s: fibonacci.cpp.s
 
-.PHONY : HelloWorld.s
+.PHONY : fibonacci.s
 
 # target to generate assembly for a file
-HelloWorld.cpp.s:
-	$(MAKE) -f CMakeFiles/myexample.dir/build.make CMakeFiles/myexample.dir/HelloWorld.cpp.s
-.PHONY : HelloWorld.cpp.s
+fibonacci.cpp.s:
+	$(MAKE) -f CMakeFiles/fibonacci.dir/build.make CMakeFiles/fibonacci.dir/fibonacci.cpp.s
+.PHONY : fibonacci.cpp.s
 
 # Help Target
 help:
@@ -156,12 +156,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... myexample"
-	@echo "... HelloWorld.o"
-	@echo "... HelloWorld.i"
-	@echo "... HelloWorld.s"
+	@echo "... rebuild_cache"
+	@echo "... fibonacci"
+	@echo "... fibonacci.o"
+	@echo "... fibonacci.i"
+	@echo "... fibonacci.s"
 .PHONY : help
 
 
